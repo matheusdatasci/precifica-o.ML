@@ -7,13 +7,13 @@
 </head>
 <body>
 
-    <h1>Precifica-o.ML</h1>
+<h1>Precifica-o.ML</h1>
     <p>Este repositório contém os seguintes arquivos:</p>
 
-    <h2>1. REQUISITOS E PACOTES NECESSÁRIOS.TXT</h2>
+<h2>1. REQUISITOS E PACOTES NECESSÁRIOS.TXT</h2>
     <p>Este arquivo descreve quais bibliotecas são necessárias e suas respectivas versões usadas.</p>
 
-    <h2>2. LH_CD_MATHEUSPINHEIRO.ipynb</h2>
+<h2>2. LH_CD_MATHEUSPINHEIRO.ipynb</h2>
     <p>Notebook com análise estatística, EDA e modelagem. Para utilizá-lo:</p>
     <ul>
         <li>Abra o notebook e, caso queira fazer algo além de apenas visualizar, baixe os pacotes necessários.</li>
@@ -28,7 +28,7 @@
     </pre>
     <p>Em seguida, realize as importações (os códigos JÁ ESTÃO no notebook).</p>
 
-    <h2>3. TREINAMENTO_MODELO.ipynb</h2>
+<h2>3. TREINAMENTO_MODELO.ipynb</h2>
     <p>Notebook com o treinamento utilizado e avaliação do desempenho. Para utilizá-lo:</p>
     <ul>
         <li>Se for utilizar no Colab, instale o pacote CatBoost com o seguinte comando:</li>
@@ -58,7 +58,7 @@
     </pre>
     <p>Os códigos JÁ ESTÃO no notebook.</p>
 
-    <h2>4. MODELO.zip</h2>
+ <h2>4. MODELO.zip</h2>
     <p>Este arquivo contém o modelo treinado, compactado para facilitar o envio (o GitHub não permite upload de arquivos maiores que 25MB). Para utilizá-lo:</p>
     <ul>
         <li>Baixe e extraia o arquivo. Dentro dele, você encontrará um arquivo .pkl.</li>
@@ -97,7 +97,7 @@
     from sklearn.metrics import mean_absolute_error  <!-- (Opcional, caso queira avaliar o modelo) -->
     </pre>
 
-    <h3>Atenção:</h3>
+<h3>Atenção:</h3>
     <p>Para utilizar o modelo, os dados precisam estar modelados conforme o modelo foi treinado. Para isso, criei uma função que faz toda modelagem automaticamente. Basta inserir dois parâmetros: o dataframe dos dados que deseja prever e o dataframe original (o arquivo enviado para o desafio).</p>
     <pre>
     dados = modelar_dados(param1, param2)
@@ -105,7 +105,7 @@
     print(previsao)
     </pre>
 
-    <h2>5. def_modelar_dados.py</h2>
+<h2>5. def_modelar_dados.py</h2>
     <p>Este é o arquivo Python com o código da função para modelar os dados antes de fazer previsões.</p>
 
 </body>
