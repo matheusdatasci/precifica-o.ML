@@ -1,0 +1,33 @@
+Requisitos para rodar o projeto:
+
+CASO QUEIRA MEXER NO RELATÓRIO:
+
+Python: Python 3.13.1
+
+Nome: numpy
+Versão: 1.26.4
+
+Nome: matplotlib
+Versão: 3.10.0
+
+Nome: pandas
+Versão: 2.2.2
+
+Nome: seaborn
+Versão: 0.13.2
+
+PARA RODAR O MODELO:
+
+Python: Python 3.13.1
+
+Nome: catboost(import CatBoostRegressor)
+Versão: 1.2.7
+AVISO: Caso opte por rodar o código LOCALMENTA(sem ser em um ambiente de execução como
+o Colab proporciona, é necessário baixar O Rust e Cargo para conseguir instalar o catboost,
+segue link para downlowad: https://rustup.rs/
+
+Nome: scikit-learn(import train_test_split, mean_aboslute_error)
+Versão: 1.6.1
+
+Nome: pandas
+Versão: 2.2.2
