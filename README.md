@@ -1,81 +1,106 @@
-# precifica-o.ML
-Temos cinco arquivos no repositório: 
-REQUISITOS E PACOTES NECESSÁRIOS.TXT: Quais bibliotecas são necessarias e suas respectivas versôes usadas.
+</head>
+<body>
 
-LH_CD_MATHEUSPINHEIRO.ipynb (Notebook com an´lise estattistica, EDA e modelagem)
-Abra e, caso queira fazer algo além de apenas visualizar, baixe os pacotes necessários(Caso vá rodar o código em um ambiente de execução, Como do google Colab, só precisará importar)
-Caso contrário, instale os pcacotes com:
-!pip install numpy==1.26.4
-!pip install matplotlib==3.10.0
-!pip install pandas==2.2.2
-!pip install seaborn==0.13.2
-e realize as importações.
-(os códigos JÁ ESTÃO no notebook)
+    <h1>Precifica-o.ML</h1>
+    <p>Este repositório contém os seguintes arquivos:</p>
 
-TREINAMENTO_MODELO.ipynb (Notebook com o treinamento utilizado e avaliação do desempenho)
-Abra e, caso queira fazer algo além de apenas visualizar, baixe os pacotes necessários:
+    <h2>1. REQUISITOS E PACOTES NECESSÁRIOS.TXT</h2>
+    <p>Este arquivo descreve quais bibliotecas são necessárias e suas respectivas versões usadas.</p>
 
-Caso vá usar no Colab:
-!pip install catboost==1.2.7
-e então importe o CatBoostRegressor
-importe o train_test_split do sklearn(já existe a lib no colab)
-importe o mean_absolute_error
-(os códigos JÁ ESTÃO no notebook)
+    <h2>2. LH_CD_MATHEUSPINHEIRO.ipynb</h2>
+    <p>Notebook com análise estatística, EDA e modelagem. Para utilizá-lo:</p>
+    <ul>
+        <li>Abra o notebook e, caso queira fazer algo além de apenas visualizar, baixe os pacotes necessários.</li>
+        <li>Caso vá rodar o código em um ambiente de execução, como o Google Colab, só precisará importar as bibliotecas.</li>
+        <li>Se for rodar em um ambiente local, instale os pacotes com os seguintes comandos:</li>
+    </ul>
+    <pre>
+    !pip install numpy==1.26.4
+    !pip install matplotlib==3.10.0
+    !pip install pandas==2.2.2
+    !pip install seaborn==0.13.2
+    </pre>
+    <p>Em seguida, realize as importações (os códigos JÁ ESTÃO no notebook).</p>
 
-Caso NÃO vá utilizar no Colab ou em outro ambiente de execução(Utilizando em um ambiente local):
-Necessária instalação do Rust e Cargo para conseguir instalr o catboost: Segue o link - https://rustup.rs/
-!pip install catboost==1.2.7
-!pip install scikit-learn==1.6.1
-!pip install pandas==2.2.2
-e então importe o CatBoostRegressor
-importe o train_test_split do sklearn
-importe o mean_absolute_error
-(os códigos JÁ ESTÃO no notebook)
+    <h2>3. TREINAMENTO_MODELO.ipynb</h2>
+    <p>Notebook com o treinamento utilizado e avaliação do desempenho. Para utilizá-lo:</p>
+    <ul>
+        <li>Se for utilizar no Colab, instale o pacote CatBoost com o seguinte comando:</li>
+    </ul>
+    <pre>
+    !pip install catboost==1.2.7
+    </pre>
+    <ul>
+        <li>Em seguida, importe o CatBoostRegressor e as demais bibliotecas:</li>
+    </ul>
+    <pre>
+    import CatBoostRegressor
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import mean_absolute_error
+    </pre>
+    <p>Se for utilizar em outro ambiente de execução (local), instale os pacotes necessários:</p>
+    <pre>
+    !pip install catboost==1.2.7
+    !pip install scikit-learn==1.6.1
+    !pip install pandas==2.2.2
+    </pre>
+    <p>Em seguida, realize as importações:</p>
+    <pre>
+    import CatBoostRegressor
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import mean_absolute_error
+    </pre>
+    <p>Os códigos JÁ ESTÃO no notebook.</p>
 
-MODELO.zip (Baixe e extraia, você terá o arquivo .pkl, precisei compactar pois o github não permite upload de arquivos maiores que 25MB)
+    <h2>4. MODELO.zip</h2>
+    <p>Este arquivo contém o modelo treinado, compactado para facilitar o envio (o GitHub não permite upload de arquivos maiores que 25MB). Para utilizá-lo:</p>
+    <ul>
+        <li>Baixe e extraia o arquivo. Dentro dele, você encontrará um arquivo .pkl.</li>
+        <li>Para usar o modelo em um ambiente de execução, instale os pacotes necessários com:</li>
+    </ul>
+    <pre>
+    !pip install catboost==1.2.7
+    </pre>
+    <ul>
+        <li>Importe as bibliotecas:</li>
+    </ul>
+    <pre>
+    import CatBoostRegressor
+    import pandas as pd
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import mean_absolute_error  <!-- (Opcional, caso queira avaliar o modelo) -->
+    import pickle
+    </pre>
+    <ul>
+        <li>Em seguida, carregue o modelo:</li>
+    </ul>
+    <pre>
+    with open('caminho_do_modelo.pkl', 'rb') as file:
+        modelo = pickle.load(file)
+    </pre>
+    <p>Se for utilizar o modelo em um ambiente local, instale os pacotes necessários com:</p>
+    <pre>
+    !pip install catboost==1.2.7
+    !pip install scikit-learn==1.6.1
+    !pip install pandas==2.2.2
+    </pre>
+    <p>Importe as bibliotecas:</p>
+    <pre>
+    import CatBoostRegressor
+    import pandas as pd
+    from sklearn.metrics import mean_absolute_error  <!-- (Opcional, caso queira avaliar o modelo) -->
+    </pre>
 
-Para usar o modelo em um ambiente de execução:
-!pip install catboot==1.2.7
-import CatBoostRegressor
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error ((OPCIONAL, caso queira avaliar o modelo)
-import pickle
-with open('caminho_do_modelo.pkl', 'rb') as file:
-    modelo = pickle.load(file)
+    <h3>Atenção:</h3>
+    <p>Para utilizar o modelo, os dados precisam estar modelados conforme o modelo foi treinado. Para isso, criei uma função que faz toda modelagem automaticamente. Basta inserir dois parâmetros: o dataframe dos dados que deseja prever e o dataframe original (o arquivo enviado para o desafio).</p>
+    <pre>
+    dados = modelar_dados(param1, param2)
+    previsao = modelo.predict(dados)
+    print(previsao)
+    </pre>
 
+    <h2>5. def_modelar_dados.py</h2>
+    <p>Este é o arquivo Python com o código da função para modelar os dados antes de fazer previsões.</p>
 
-Para usar o modelo em um ambiente local:
-!pip install catboost==1.2.7 (não esqueça do Rust e Cargo:https://rustup.rs/)
-!pip install scikit-learn==1.6.1
-!pip install pandas==2.2.2
-import CatBoostRegressor
-import pandas as pd
-from sklearn.metrics import mean_absolute_error ((OPCIONAL, caso queira avaliar o modelo)
-
-ATENÇÃO: Para utilizar o modelo, os dados precisarão estar modelados conforme o modelo foi treinado.
-
-Para isso, criei uma função que faz toda modelagem sozinha, basta inserir dois parametros(dataframe dos dados que querem prever valores, dataframe original(o arquivo mandado para o desafio))
-
-Salve o retorno dessa função em uma variável como: dados = modelar_dados(param1. param2) e então, finalmente:
-
-previsao = modelo.predict(dados)
-print(previsao)
-
-
-def_modelar_dados.py: Arquivo python com o código da função para modelar os dados antes de fazer previsões.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
