@@ -10,10 +10,10 @@
 <h1>Precifica-o.ML</h1>
     <p>Este repositório contém os seguintes arquivos:</p>
 
- <h2>1. REQUISITOS E PACOTES NECESSÁRIOS.TXT</h2>
+<h2>1. REQUISITOS E PACOTES NECESSÁRIOS.TXT</h2>
     <p>Este arquivo descreve quais bibliotecas são necessárias e suas respectivas versões usadas.</p>
 
- <h2>2. LH_CD_MATHEUSPINHEIRO.ipynb</h2>
+<h2>2. LH_CD_MATHEUSPINHEIRO.ipynb</h2>
     <p>Notebook com análise estatística, EDA e modelagem. Para utilizá-lo:</p>
     <ul>
         <li>Abra o notebook e, caso queira fazer algo além de apenas visualizar, baixe os pacotes necessários.</li>
@@ -28,7 +28,7 @@
     </pre>
     <p>Em seguida, realize as importações (os códigos JÁ ESTÃO no notebook).</p>
 
- <h2>3. TREINAMENTO_MODELO.ipynb</h2>
+<h2>3. TREINAMENTO_MODELO.ipynb</h2>
     <p>Notebook com o treinamento utilizado e avaliação do desempenho. Para utilizá-lo:</p>
     <ul>
         <li>Se for utilizar no Colab, instale o pacote CatBoost com o seguinte comando:</li>
@@ -58,7 +58,7 @@
     </pre>
     <p>Os códigos JÁ ESTÃO no notebook.</p>
 
-<h2>4. MODELO.zip</h2>
+ <h2>4. MODELO.zip</h2>
     <p>Este arquivo contém o modelo treinado, compactado para facilitar o envio (o GitHub não permite upload de arquivos maiores que 25MB). Para utilizá-lo:</p>
     <ul>
         <li>Baixe e extraia o arquivo. Dentro dele, você encontrará um arquivo .pkl.</li>
@@ -74,7 +74,7 @@
     import CatBoostRegressor
     import pandas as pd
     from sklearn.model_selection import train_test_split
-    from sklearn.metrics import mean_absolute_error  (Opcional, caso queira avaliar o modelo) 
+    from sklearn.metrics import mean_absolute_error  <!-- (Opcional, caso queira avaliar o modelo) -->
     import pickle
     </pre>
     <ul>
@@ -94,7 +94,7 @@
     <pre>
     import CatBoostRegressor
     import pandas as pd
-    from sklearn.metrics import mean_absolute_error  (Opcional, caso queira avaliar o modelo)
+    from sklearn.metrics import mean_absolute_error  <!-- (Opcional, caso queira avaliar o modelo) -->
     </pre>
 
  <h3>Atenção:</h3>
@@ -105,11 +105,10 @@
     print(previsao)
     </pre>
 
- <h2>5. def_modelar_dados.py</h2>
+<h2>5. def_modelar_dados.py</h2>
     <p>Este é o arquivo Python com o código da função para modelar os dados antes de fazer previsões.</p>
 
- <h3>Informações adicionais:</h3>
-    <p>Se precisar instalar o <a href="https://www.rust-lang.org/" target="_blank">Rust</a> para rodar algum pacote ou biblioteca relacionada, você pode seguir as instruções no <a href="https://www.rust-lang.org/learn/get-started" target="_blank">site oficial do Rust</a>.</p>
+<p>Qualquer etapa que inclua o uso da biblioteca CATBOOST, CASO VOCê VÁ UTILIZAR EM UM AMBIENTE LOCAL, você vai precisará instalar o <a href="https://rustup.rs/" target="_blank">Rust e Cargo</a> na sua máquina .</p>
 
 </body>
 </html>
